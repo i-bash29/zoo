@@ -3,8 +3,8 @@ spl_autoload_register(function ($class_name) {
     include $class_name . '.class.php';
 });
 
-//Создаем класс Земноводные
-class Amphibian extends Animal
+//Создаем класс Пресмыкающиеся
+class Reptile extends Animal
 {
     public static $count = 0; //для подсчета количества объектов
     public $length; //длина

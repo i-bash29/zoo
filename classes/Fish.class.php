@@ -6,14 +6,14 @@ spl_autoload_register(function ($class_name) {
 //Создаем класс Рыба
 class Fish extends Animal
 {
-    public $lenght; //длина
-    public $type; //тип
-    protected $isSoldWater; //в соленой или пресной воде обитает
-    function __construct($name, $weight, $lenght, $type, $isSoldWater = 1) {
-        parent::__construct($name, $weight);
-        $this->lenght = $lenght;
-        $this->type = $type;
-        $this->isSoldWater = $isSoldWater;
+    public static $count = 0; //для подсчета количества объектов
+    public $length; //длина
+    private $isSoldWater; //в соленой или пресной воде обитает
+    public function __construct($name, $weight, $type, $food, $length, $isSoldWater = 1) {
+        parent::__construct($name, $weight, $type, $food);
+        $this->length = $length; //добавляем к родительскому конструктору длину
+        $this->isSoldWater = $isSoldWater; //добавляем к родительскому конструктору в какой воде обитает
+        self::$count++; //счетчик объектов
     }
     public function isSoldWater(){
         if($this -> isSoldWater == 1){
