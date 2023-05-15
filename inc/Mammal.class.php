@@ -23,7 +23,7 @@ class Mammal extends Animal
     }
     public function isHair(){
         if($this -> isHair == 1){
-            echo 'У ' . $this -> type . ' коричневая шерсть длиной ' . $this->hairLength . '.' . '<br>';
+            echo 'У ' . $this -> type . $this->hairLength . ' шерсть длиной ' . $this->hairLength . '.' . '<br>';
         } else {
             echo $this -> type . ' не имеет шерсти.' . '<br>';
         }

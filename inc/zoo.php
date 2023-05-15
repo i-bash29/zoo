@@ -1,6 +1,6 @@
 <?php
 spl_autoload_register(function ($class_name) {
-    include '../classes/' . $class_name . '.class.php';
+    include $class_name . '.class.php';
 });
 
 //создаем рыб
@@ -25,3 +25,9 @@ $salamander = new Amphibian('Salamander', '30 кг', 'Саламандра', 'н
 //создаем пресмыкающихся
 $triton = new Reptile('Turtle', '300 кг', 'Слоновая черепаха', 'растения', '1.4 м', 'зелено-коричневый', 1, '20 см');
 $frog = new Reptile('Crocodile', '200 кг', 'Крокодил', 'мясо', '4 м', 'зеленый', 1, '1 м', 1);
+
+//посчитаем животных
+$animalsCount = Fish::$count + Mammal::$count + Bird::$count + Amphibian::$count + Reptile::$count;
+
+//списки животных
+$mammals = ['firstMonkey', 'secondMonkey', 'lion', 'dolphin'];
