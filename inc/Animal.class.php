@@ -15,6 +15,6 @@ abstract class Animal
     }
 
     public function eat(){
-        echo 'Корм для ' . $this -> type . ': ' . $this -> food . '<br>';
+        echo 'Корм для ' . $this -> type . ': ' . $this -> food . '.' . '<br>';
     }
 }

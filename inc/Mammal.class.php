@@ -7,6 +7,7 @@ spl_autoload_register(function ($class_name) {
 class Mammal extends Animal
 {
     public static $count = 0; //для подсчета количества объектов
+    public static $n = 1; //для таблицы животных
     public $height; //рост
     private $isHair; //есть ли шерсть
     private $hairColor; //цвет шерсти
@@ -21,18 +22,52 @@ class Mammal extends Animal
         $this->isLiveInWater = $isLiveInWater; //добавляем к родительскому конструктору в воде ли живет
         self::$count++; //счетчик объектов
     }
-    public function isHair(){
+    // метод для описания шерсти
+    private function isHair() {
         if($this -> isHair == 1){
-            echo 'У ' . $this -> type . $this->hairLength . ' шерсть длиной ' . $this->hairLength . '.' . '<br>';
+            echo $this -> type . ' имеет шерсть длиной ' . $this->hairLength . ', цвет ' . $this->hairColor . '.' . '<br>';
         } else {
             echo $this -> type . ' не имеет шерсти.' . '<br>';
         }
     }
-    public function isLiveInWater(){
+    //метод для описания, в воде живет или нет
+    private function isLiveInWater() {
         if($this -> isLiveInWater == 1){
             echo $this -> type . ' обитает в воде.' . '<br>';
         } else {
             echo $this -> type . ' обитает на суше.' . '<br>';
+        }
+    }
+    // метод для вывода данных в таблицу
+    public function drowTable() {
+        $i = self::$n;
+        if ($i == 1) {
+            echo '<table>
+            <caption>Список млекопитающих</caption>
+            <thead>
+                <tr>
+                <th>№</th>
+                <th>Имя</th>
+                <th>Вес</th>
+                <th>Тип</th>
+                <th>Рост</th>
+                <th>Описание</th>
+                </tr>
+                </thead>
+                <tbody>';
+        }
+        echo '<tr>';
+        echo '<td>' . $i . '</td>';
+        echo '<td>' . $this -> name . '</td>';
+        echo '<td>' . $this -> weight . '</td>';
+        echo '<td>' . $this -> type . '</td>';
+        echo '<td>' . $this -> height . '</td><td>';
+        echo $this -> eat() . $this -> isHair() . $this -> isLiveInWater() . '</td>';
+        echo '</tr>';
+        self::$n++;
+        if ($i == self::$count) {
+            echo '</tbody>
+            </table>';
         }
     }
 }

@@ -3,6 +3,8 @@ spl_autoload_register(function ($class_name) {
     include $class_name . '.class.php';
 });
 
+$title = 'Зоопарк'; //название
+
 //создаем рыб
 $goldFish = new Fish('Gold Fish', '0.3 кг', 'Золотая рыбка', 'насекомые', '0.4 м');
 $som = new Fish('Som', '8 кг', 'Сом', 'всеядный', '4 м', 0);
@@ -23,11 +25,11 @@ $frog = new Amphibian('Frog', '500 г', 'Лягушка', 'насекомые', 
 $salamander = new Amphibian('Salamander', '30 кг', 'Саламандра', 'насекомые', '1.2 м', 'коричнево-бурый', 1, '40 см', 1);
 
 //создаем пресмыкающихся
-$triton = new Reptile('Turtle', '300 кг', 'Слоновая черепаха', 'растения', '1.4 м', 'зелено-коричневый', 1, '20 см');
-$frog = new Reptile('Crocodile', '200 кг', 'Крокодил', 'мясо', '4 м', 'зеленый', 1, '1 м', 1);
+$turtle = new Reptile('Turtle', '300 кг', 'Слоновая черепаха', 'растения', '1.4 м', 'зелено-коричневый', 1, '10 см');
+$crocodile = new Reptile('Crocodile', '200 кг', 'Крокодил', 'мясо', '4 м', 'зеленый', 1, '1 м', 1);
 
 //посчитаем животных
 $animalsCount = Fish::$count + Mammal::$count + Bird::$count + Amphibian::$count + Reptile::$count;
 
 //списки животных
-$mammals = ['firstMonkey', 'secondMonkey', 'lion', 'dolphin'];
+$mammals = ['$firstMonkey', '$secondMonkey', '$lion', '$dolphin'];
