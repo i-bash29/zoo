@@ -1,8 +1,9 @@
 <?php
+global $firstMonkey, $secondMonkey, $lion, $dolphin, $owl, $parrot, $turtle, $triton, $crocodile, $title, $frog, $salamander, $goldFish, $som;
 include 'inc/zoo.php';
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 	<head>
 		<title><?= $title?></title>
 		<meta charset="utf-8" />
@@ -10,7 +11,7 @@ include 'inc/zoo.php';
 	</head>
 	<body>
         <h1> Зоопарк</h1>
-        <p>Зоопарк содержит <?=$animalsCount ?> животных:</p>
+        <p>Зоопарк содержит <?=Animal::$count ?> животных:</p>
         <ul>
             <li>Млекопитающие: <?=Mammal::$count ?></li>
             <li>Птицы: <?=Bird::$count ?></li>
@@ -20,31 +21,31 @@ include 'inc/zoo.php';
         </ul>
         <?php
         //делаем таблицу с млекопитающими
-        $firstMonkey -> drowTable();
-        $secondMonkey -> drowTable();
-        $lion -> drowTable();
-        $dolphin -> drowTable();
+        $firstMonkey -> drawTable();
+        $secondMonkey -> drawTable();
+        $lion -> drawTable();
+        $dolphin -> drawTable();
         echo '<br>';
 
         //делаем таблицу с птицами
-        $owl -> drowTable();
-        $parrot -> drowTable();
+        $owl -> drawTable();
+        $parrot -> drawTable();
         echo '<br>';
 
         //делаем таблицу с пресмыкающимися
-        $turtle -> drowTable();
-        $crocodile -> drowTable();
+        $turtle -> drawTable();
+        $crocodile -> drawTable();
         echo '<br>';
 
         //делаем таблицу с земноводными
-        $triton -> drowTable();
-        $frog -> drowTable();
-        $salamander -> drowTable();
+        $triton -> drawTable();
+        $frog -> drawTable();
+        $salamander -> drawTable();
         echo '<br>';
 
         //делаем таблицу с рыбами
-        $goldFish -> drowTable();
-        $som -> drowTable();
+        $goldFish -> drawTable();
+        $som -> drawTable();
 
         ?>
     </body>

@@ -39,7 +39,7 @@ class Mammal extends Animal
         }
     }
     // метод для вывода данных в таблицу
-    public function drowTable() {
+    public function drawTable() {
         $i = self::$n;
         if ($i == 1) {
             echo '<table>
